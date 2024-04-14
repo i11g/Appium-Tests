@@ -108,16 +108,6 @@
 				}
 			],
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{accessToken}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -214,7 +204,7 @@
 							"})\r",
 							"\r",
 							"pm.test(\"Edited Idea title is correct\", function () {\r",
-							"    pm.expect(responseData.title).to.eql(\"Edited title\")\r",
+							"    pm.expect(responseData.idea.title).to.eql(\"Edited Title\")\r",
 							"})\r",
 							""
 						],
@@ -228,7 +218,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"title\":\"Edited Ttile\",\r\n\"description\":\"Edited description for New Idea with title Edited title\"\r\n}",
+					"raw": "{\r\n\"title\":\"Edited Title\",\r\n\"description\":\"Edited description for New Idea with title Edited Title\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -266,16 +256,15 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"const responseData=pm.response.json() \r",
+							"const responseText=pm.response.text() \r",
 							"\r",
-							"pm.test(\"Response contains message Edited successfully\", function() {\r",
-							"    pm.expect(responseData.msg).to.eql(\"Edited successfully\")\r",
+							"pm.test(\"Response is a string\", function (){\r",
+							"    pm.expect(responseText).is.a(\"string\")\r",
 							"})\r",
 							"\r",
-							"pm.test(\"Edited Idea title is correct\", function () {\r",
-							"    pm.expect(responseData.title).to.eql(\"Edited title\")\r",
-							"})\r",
-							""
+							"pm.test(\"The string equals to The idea is deleted!\",function(){\r",
+							"    pm.expect(responseText).to.contain(\"The idea is deleted!\")\r",
+							"})"
 						],
 						"type": "text/javascript",
 						"packages": {}
