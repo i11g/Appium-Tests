@@ -173,5 +173,21 @@ namespace IdeaAPITesting
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
             Assert.That(response.Content, Does.Contain("There is no such idea!"));
         }
+
+        [Order(7)]
+        [Test] 
+
+        public void Delete_Non_ExistingIdea_Should_Return_BadRequest ()
+        {
+            string ideaId = "1000";
+            var request = new RestRequest("/api/Idea/Delete", Method.Delete);
+            request.AddQueryParameter("ideaId", ideaId);
+
+            var response = client.Execute(request);
+
+            string content = "There is no such idea!";
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
+            Assert.That(response.Content, Does.Contain(content));
+        }
   }
 }
