@@ -2,6 +2,7 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System.Net;
 using System.Text.Json;
+using IdeaAPI.Tests.Models;
 
 namespace IdeaAPI.Tests
 {
@@ -59,10 +60,27 @@ namespace IdeaAPI.Tests
            
         }
 
+        [Order (1)]
+
         [Test]
-        public void Test1()
+        public void CreateIdea_WithRequiredFields_ShouldSucceed()
         {
-            Assert.Pass();
+            var ideaRequest = new IdeaDTO
+            {
+                Title = "New Idea",
+                Url = "",
+                Description = "A detailed description of the idea."
+
+            };
+
+            var request = new RestRequest("/api/Idea/Create", Method.Post);
+            request.AddJsonBody(ideaRequest);
+            var response = this._client.Execute(request);
+            var createResponse = JsonSerializer.Deserialize<ApiResponseDto>(response.Content);
+
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+            Assert.That(createResponse.Msg, Is.EqualTo("Successfully created!"));
+
         }
     }
 }
