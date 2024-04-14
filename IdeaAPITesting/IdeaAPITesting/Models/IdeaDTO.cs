@@ -10,9 +10,9 @@ namespace IdeaAPITesting.Models
 {
     public class IdeaDTO
     {
-        [JsonPropertyName("type")]    
+        [JsonPropertyName("title")]    
         
-        public string Type { get; set; }
+        public string Title { get; set; }
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
