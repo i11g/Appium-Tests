@@ -17,7 +17,7 @@ namespace NotePadProject
                 PlatformName="Android",
                 AutomationName="UIAutomator2",
                 DeviceName="Pixel 7a API 31",
-                App= @"C:\\Notepad.apk\"
+                App= @"C:\\Notepad.apk"
             };
 
             androidOptions.AddAdditionalAppiumOption("autoGrantPermissions", true);
@@ -50,7 +50,7 @@ namespace NotePadProject
             var createTextNote = _driver.FindElement(MobileBy.AndroidUIAutomator("new UiSelector().text(\"Text\")"));
             createTextNote.Click();
             var writetextField = _driver.FindElement(MobileBy.Id("com.socialnmobile.dictapps.notepad.color.note:id/edit_note"));
-            writetextField.Click();
+            writetextField.SendKeys("Test");
 
             var clickNote = _driver.FindElement(MobileBy.Id("com.socialnmobile.dictapps.notepad.color.note:id/back_btn"));
             clickNote.Click();
