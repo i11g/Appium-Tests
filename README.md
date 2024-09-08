@@ -1,6 +1,5 @@
-# Automated Testing of Single Page Application using qUnit and Playwright
-This project shows how to use QUnit and Playwright to perform integration and end to end testing on SPA application. 
-The testing is focus on requests and responses using the JS fetch API and different Playwright modules.  
+# Automated Testing of Different Mobile Applications using Appium
+This repo shows how to use Appium as a tool to test different web applications. 
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -10,13 +9,12 @@ The testing is focus on requests and responses using the JS fetch API and differ
 * [License](#license) 
 
 ## General Information
-This project shows how to perform an integration testing and end to ent testing on Single Page Application using QUnit and Playwright.The two tools are used to develop a 
-number of testing suites allowing for thorough check of application integration and UI functionalities.    
+This project shows how to develop testing solutions using Appium Inspector and Android Studio and Playwright for different web applications.
+
 ## Technologies Used
-- JS ES6, QUnit and Playwright
+- Appium Inspector, Android Studio
 
 ## Acknowledgements
-
 - Many thanks to SoftUni
 
 ## Contact
