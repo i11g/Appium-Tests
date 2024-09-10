@@ -9,7 +9,7 @@ This repo shows how to use Appium as a tool to test different web applications.
 * [License](#license) 
 
 ## General Information
-This project shows how to develop testing solutions using Appium Inspector and Android Studio and Playwright for different web applications.
+This repo shows how to develop testing solutions using Appium Inspector and Android Studio for different web applications.
 
 ## Technologies Used
 - Appium Inspector, Android Studio
