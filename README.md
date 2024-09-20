@@ -1,5 +1,5 @@
 # Automated Testing of Different Mobile Applications using Appium
-This repo shows how to use Appium as a tool to test different web applications. 
+This repo shows how to use Appium as a tool to test different Web Apps. 
 
 ## Table of Contents
 * [General Info](#general-information)
